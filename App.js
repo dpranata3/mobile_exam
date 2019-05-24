@@ -7,11 +7,17 @@ import AuthScreen from './src/screens/Auth/Auth'
 import SharePlaceScreen from './src/screens/SharePlace/SharePlace'
 import FindPlaceScreen from './src/screens/FindPlace/FindPlace'
 import PlaceDetailScreen from './src/screens/PlaceDetail/PlaceDetail'
+import SideDrawerScreen from './src/screens/SideDrawer/SideDrawer'
 
 const store = configureStore()
 
 // Register Screens
-Navigation.registerComponent("jc8reactnative.AuthScreen", () => AuthScreen)
+Navigation.registerComponent(
+  "jc8reactnative.AuthScreen",
+  () => AuthScreen,
+  store,
+  Provider
+)
 
 Navigation.registerComponent(
   "jc8reactnative.SharePlaceScreen",
@@ -30,6 +36,13 @@ Navigation.registerComponent(
 Navigation.registerComponent(
   'jc8reactnative.PlaceDetailScreen',
   () => PlaceDetailScreen,
+  store,
+  Provider
+)
+
+Navigation.registerComponent(
+  'jc8reactnative.SideDrawerScreen',
+  () => SideDrawerScreen,
   store,
   Provider
 )
