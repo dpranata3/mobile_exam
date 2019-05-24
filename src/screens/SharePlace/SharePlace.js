@@ -16,7 +16,9 @@ import JabatanInput from '../../components/JabatanInput/JabatanInput'
 
 class SharePlaceScreen extends Component {
     state = {
-        placeName : ''
+        placeName : '',
+        usia:'',
+        jabatan:''
     }
 
     constructor(props) {
@@ -121,4 +123,10 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(SharePlaceScreen)
+const mapStateToProps = state => {
+    return {
+        user: state.auth.user.uid
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SharePlaceScreen)

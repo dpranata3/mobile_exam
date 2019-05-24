@@ -27,11 +27,19 @@ class FindPlaceScreen extends Component {
         const selPlace = this.props.places.find(place => {
             return place.key == key
         })
+
+        const selUsia = this.props.places.find(usia=>{
+            return usia.usia == usia
+        })
+
+        console.log(selUsia);
+        
         this.props.navigator.push({
             screen: 'jc8reactnative.PlaceDetailScreen',
             title: selPlace.value,
             passProps: {
-                selectedPlace: selPlace
+                selectedPlace: selPlace,
+                selectedUsia: selUsia
             }
         })
     }
@@ -56,7 +64,8 @@ class FindPlaceScreen extends Component {
 
 const mapStateToProps = state => {
     return {
-        places: state.places.places
+        places: state.places.places,
+        user:state.auth.user
     }
 }
 

@@ -23,7 +23,11 @@ class PlaceDetail extends Component {
                         style={styles.placeImage}
                         source={this.props.selectedPlace.image}
                     />
-                    <Text style={styles.placeName}>{this.props.selectedPlace.value}</Text>
+                    <Text style={styles.placeName}>Nama: {this.props.selectedPlace.value}</Text>
+                    <Text style={styles.placeName}>Usia: {this.props.selectedPlace.usia}</Text>
+                    <Text style={styles.placeName}>Jabatan:{this.props.selectedPlace.jabatan}</Text>
+
+
                     
 
                 </View>
@@ -57,4 +61,10 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(PlaceDetail)
+const mapStateToProps = state => {
+    return {
+        uid: state.auth.user.uid
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlaceDetail)

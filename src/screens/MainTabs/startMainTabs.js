@@ -43,6 +43,8 @@ const startTabs = () => {
             drawer: {
                 left: {
                     screen: 'jc8reactnative.SideDrawerScreen',
+                    label:'Logout',
+                    title:'Logout'
                     
                 }
             }
